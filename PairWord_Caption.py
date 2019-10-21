@@ -45,12 +45,12 @@ for i in list(df):
     for i in jmlh :
         a= i.split ()
         if (len(a) > 1):
-            datanew = datanew.append({"id User" : [id], "word1" : [word1], "word2" : [word2], "freq" : jmlh [i]})
+            datanew = datanew.append({"id User" : [id], "word1" : a[0], "word2" : a[1], "freqs" : jmlh [i]})
             with open(databaru, 'a', encoding="utf-8", newline='') as f:
                 data.to_csv(f, header=f.tell()==0)
         idx += 1
     id_user += 1
     
 databaru = "PairWord_Caption.csv"
-print (databaru)
-#data.to_csv("PairWord_Caption.csv")
+#print (databaru)
+databaru.to_csv("PairWord_Caption.csv")
